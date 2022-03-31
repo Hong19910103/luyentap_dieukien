@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phương Trình bậc 2</title>
+</head>
+<body>
+<script>
+    let a = +prompt("nhập phần tử a");
+    let b = +prompt('nhập phần tử b vào đây');
+    let c = +prompt('nhập phần tử c vào đây');
+    let delta = (b * b) - (4 * a * c);
+    let nh = -c / b
+    if (a === 0) {
+        if (b === 0) {
+            if (c === 0) {
+                console.log('Phương trình vô số nhiệm');
+            } else {
+                console.log("Phương trình vô nhiệm ");
+            }
+        }else
+            {
+                console.log("Phương trình có nhiệm: " + nh);
+            }
+
+
+    } else {
+        if (delta === 0) {
+            console.log("Phương trình có nghiệm kép" + -b / (2 * a))
+        } else if (delta < 0) {
+            console.log("phương trình vô nhiệm");
+        } else {
+            let x1 = (-b + Math.sqrt(delta)) / 2 * a;
+            let x2 = (-b - Math.sqrt(delta)) / 2 * a;
+            console.log(x1);
+            console.log(x2);
+        }
+    }
+</script>
+
+</body>
+</html>

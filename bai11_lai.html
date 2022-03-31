@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi </title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Số tiền gửi:</td>
+        <td><input type="text" id="money"></td>
+    </tr>
+    <tr>
+        <td>Số tháng gửi :</td>
+        <td><input type="text" id="month"></td>
+    </tr>
+    <tr>
+        <td>Lãi theo tháng:</td>
+        <td><input type="text" id="lai"></td>
+    </tr>
+    <tr>
+        <button onclick="tinhlai()"> Nhập</button>
+    </tr>
+    <tr>
+        <td>Số tiền sau khi gửi</td>
+        <td id="total" style="border: black solid" width="100px" ></td>
+    </tr>
+</table>
+<script>
+    let goc = +document.getElementById('money').value;
+    let time = +document.getElementById('month').value;
+    let lai = +document.getElementById('lai').value;
+
+    function tinhlai() {
+        let nhan = goc * Math.pow((1 + lai), time);
+        document.getElementById("total").innerHTML = nhan;
+    }
+
+</script>
+</body>
+</html>

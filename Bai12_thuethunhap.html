@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thuế thu nhập cá nhân</title>
+</head>
+<body>
+<input type="text" id="money" class="gross" placeholder="Nhập lương  vào đây">
+<button onclick="getNetSalary()">Get Net</button>
+<div>
+    <p>Lương: <span id="lg">0</span></p>
+    <p>Thuế: <span id="th">0</span></p>
+    <p>Lương thực nhận: <span id="net">0</span></p>
+
+</div>
+<script>
+    function getNetSalary() {
+        let lg1 = +document.getElementById("money").value;
+        let tax = 0;
+
+        if (lg1 >= 40) {
+            tax = lg1 * 0.3;
+        } else if (lg1 > 15) {
+            tax = lg1 * 0.2;
+        } else {
+            tax = lg1 * 0.1;
+        }
+
+        let net = lg1 - tax;
+
+        document.getElementById("lg").innerHTML = gross;
+        document.getElementById("th").innerHTML = tax;
+        document.getElementById("net").innerHTML = "<b>"+net+"</b>";
+    }
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chương trình tính giá điện </title>
+</head>
+<body>
+<span> Nhập số điện vào đây <input type="text" id=" sodien"></span><br>
+<button  onclick=  id="nhap">Nhập</button>
+<br>
+<table>
+    <tr>
+        <td>Tiền Điện là :</td>
+        <td id="kq" style="border: black solid " width="50px"></td>
+    </tr>
+</table>
+
+<script>
+    let nhap1 = document.getElementById('nhap');
+    nhap1.addEventListener('click',congthuc);
+
+
+    function congthuc() {
+        let dien = +document.getElementById('sodien').value;
+        if (dien <= 400) {
+            document.getElementById("kq").innerHTML = dien * 2834;
+        } else if (dien <= 200) {
+            document.getElementById("kq").innerHTML = dien * 2014;
+        } else if (dien <= 100) {
+            document.getElementById("kq").innerHTML = dien * 1676;
+        } else {
+            document.getElementById("kq").innerHTML = dien * 2937;
+        }
+    }
+</script>
+</body>
+</html>
